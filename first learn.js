@@ -15,5 +15,5 @@ const a = prompt('Один з останій переглянутих фільм
 
  personalMovieDB.movies[a]=b;
  personalMovieDB.movies[c]=d;
- 
+
  console.log(personalMovieDB);     
