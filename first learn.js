@@ -1,4 +1,14 @@
-const numberOfFilms = +prompt('Скільки фільмів ви вже переглянули?','');
+let numberOfFilms ;
+
+function start() {
+ numberOfFilms = +prompt('Скільки фільмів ви вже переглянули?', '');
+
+while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt('Скільки фільмів ви вже переглянули?', '');
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -16,6 +26,7 @@ const personalMovieDB = {
  personalMovieDB.movies[a]=b;
  personalMovieDB.movies[c]=d;*/
 
+ function remembberMyFilms() {
 for( let i = 0; i < 2; i++){
     const a = prompt('Один з останій переглянутих фільмів?', ''),
           b = prompt('Яка Ваша оцінка?', '');
@@ -28,6 +39,11 @@ for( let i = 0; i < 2; i++){
             i--;
         }
     }
+}
+remembberMyFilms();
+
+function detectPersonalLevel() {
+    
 
     if(personalMovieDB.count < 10){
         console.log(' Переглянуто занадто мало фільмів! ');
@@ -37,6 +53,25 @@ for( let i = 0; i < 2; i++){
         console.log(' Ви затятий кіноман ');
     }else {
         console.log(' Відбулася помилка');
+
+    }
+}detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if(!hidden) {
+        console.log(personalMovieDB)
+
+    }
+}
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for( let i = 1; i <= 3; i++ ) {
+        const genre = prompt(`Ваш улюблений жанр під номером ${i}`);
+        personalMovieDB.genres[i - 1] = genre
     }
 
+
+}
+writeYourGenres();
  console.log(personalMovieDB);     
